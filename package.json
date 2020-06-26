@@ -1,0 +1,31 @@
+{
+  "name": "ultimate-webdev-showdown",
+  "version": "1.0.0",
+  "description": "Real-time tic tac toe",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maximilliancharlemagne/ultimate-webdev-showdown.git"
+  },
+  "keywords": [
+    "tic-tac-toe",
+    "game",
+    "react",
+    "socket",
+    "socket-io"
+  ],
+  "author": "Max, Ben, Kele, Isaac",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maximilliancharlemagne/ultimate-webdev-showdown/issues"
+  },
+  "homepage": "https://github.com/maximilliancharlemagne/ultimate-webdev-showdown#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1"
+  }
+}
