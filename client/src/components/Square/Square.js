@@ -3,7 +3,7 @@ import './Square.css'
 
 const Square = (props) => {
   return (
-    <div className = "square">{props.text}</div>
+    <button className = "square" onClick = {props.handleClick}>{props.value}</button>
   )
 }
 

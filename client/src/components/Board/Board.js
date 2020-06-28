@@ -3,28 +3,52 @@ import React from 'react'
 //import custom components
 import Square from '../Square'
 
+let i = -1
+
 class Board extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      boardState: [['X','O','X'],['X',' ','O'],['X','X','X']]
+      squares: Array(9).fill(null),
+      isXTurn: true
     }
+  }
+
+  //credit to React Tic Tac Toe tutorial: https://reactjs.org/tutorial/tutorial.html
+
+  handleClick (i) {
+    const squares = this.state.squares.slice()
+    squares[i] = this.state.isXTurn? 'X' : 'O'
+    this.setState({squares: squares, isXTurn: !this.state.isXTurn})
+  }
+
+  renderSquare (i) {
+    return (
+      <Square
+        value = {this.state.squares[i]}
+        handleClick = {() => {this.handleClick(i)}}
+      />
+    )
   }
 
   render () {
     return (
       <>
-        {this.state.boardState.map(elem => {
-          return (
-            <div>
-              {elem.map(subElem => {
-                return (
-                  <Square text={subElem}/>
-                )
-              })}
-            </div>
-          )
-        })}
+        <div>
+          {this.renderSquare(0)}
+          {this.renderSquare(1)}
+          {this.renderSquare(2)}
+        </div>
+        <div>
+          {this.renderSquare(3)}
+          {this.renderSquare(4)}
+          {this.renderSquare(5)}
+        </div>
+        <div>
+          {this.renderSquare(6)}
+          {this.renderSquare(7)}
+          {this.renderSquare(8)}
+        </div>
       </>
     );
   }

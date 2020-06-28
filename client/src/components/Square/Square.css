@@ -6,4 +6,6 @@
   min-height: 80px;
   min-width: 80px;
   font-size: xx-large;
+  margin: 10px;
+  vertical-align: middle;
 }
