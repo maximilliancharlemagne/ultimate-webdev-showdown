@@ -1,9 +1,9 @@
 import React from 'react'
 import './Square.css'
 
-const Square = () => {
+const Square = (props) => {
   return (
-    <div className = "square">square</div>
+    <div className = "square">{props.text}</div>
   )
 }
 
