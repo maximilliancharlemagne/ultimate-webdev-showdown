@@ -9,6 +9,7 @@ import Paper from "@material-ui/core/Paper"
 //import custom components
 import Navbar from '../../components/Navbar'
 import GameArea from '../../components/GameArea'
+import InfoArea from '../../components/InfoArea';
 
 const Game = () => {
   return (
@@ -16,14 +17,14 @@ const Game = () => {
       <Navbar/>
       <Container>
         <Grid container>
-          <Grid item md={9}>
+          <Grid item md={6}>
             <Paper>
               <GameArea/>
             </Paper>
           </Grid>
-          <Grid item md={3}>
+          <Grid item md={6}>
             <Paper>
-              <h1>Info Area</h1>
+              <InfoArea currentPlayer = "Ben"/>
             </Paper>
           </Grid>
         </Grid>

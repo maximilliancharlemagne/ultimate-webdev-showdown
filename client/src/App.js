@@ -1,6 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
+//import CSS
+import './App.css'
+
 //import pages
 import Game from './pages/Game'
 
