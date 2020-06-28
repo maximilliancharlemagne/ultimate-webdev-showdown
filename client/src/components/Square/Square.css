@@ -1,0 +1,7 @@
+.square {
+  display: inline-block;
+  text-align: center;
+  border-style: solid;
+  min-height: 100px;
+  min-width: 100px;
+}
