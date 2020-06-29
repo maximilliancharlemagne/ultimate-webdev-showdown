@@ -41,8 +41,39 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
     <!-- Title -->
     <title>React App</title>
+
+    <!-- socket.io Initial Test -->
+    <script src='/socket.io/socket.io.js'></script>
+      <script>
+          var socket = io();
+
+          socket.on('welcome', function(data) {
+              addMessage(data.message);
+
+              // Respond with a message including this clients' id sent from the server
+              socket.emit('i am client', {data: 'foo!', id: data.id});
+          });
+          socket.on('time', function(data) {
+              addMessage(data.time);
+          });
+          socket.on('error', console.error.bind(console));
+          socket.on('message', console.log.bind(console));
+
+          function addMessage(message) {
+              var text = document.createTextNode(message),
+                  el = document.createElement('li'),
+                  messages = document.getElementById('messages');
+
+              el.appendChild(text);
+              messages.appendChild(el);
+          }
+      </script>
   </head>
+  
   <body>
+    <!-- socket.io Initial Test -->
+    <ul id='messages'></ul>
+    
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <!--
