@@ -3,8 +3,6 @@ import React from 'react'
 //import custom components
 import Square from '../Square'
 
-let i = -1
-
 class Board extends React.Component {
   constructor (props) {
     super(props)
