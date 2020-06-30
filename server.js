@@ -31,5 +31,5 @@ passport.use(new JWTStrategy({
 
 app.use(require("./routes"))
 require('./config')
-.then(()=>app.listen(3001))
-.catch(err=>console.logh(err))
+.then(()=>app.listen(process.env.PORT))
+.catch(err=>console.log(err))
