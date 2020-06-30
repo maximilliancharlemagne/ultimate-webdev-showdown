@@ -19,7 +19,7 @@ function App() {
         <Route exact path='/SignUp'>
           <SignUp />
         </Route>
-        <Route path = "/">
+        <Route exact path = "/game">
           {/* Putting the game page in root for testing purposes */}
           <Game/>
         </Route>
