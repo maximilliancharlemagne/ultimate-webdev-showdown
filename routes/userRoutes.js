@@ -5,8 +5,8 @@ const passport = require('passport')
 
 // sign in funtionality
 router.post('/users/signUp',(req, res)=>{
-  const{ username, wins, loses } = req.body
-  User.register(new User({ username, wins, loses }),req.body.password, err=>{
+  const{ username, leaderboardRanking, userAvatarImageLink } = req.body
+  User.register(new User({ username, leaderboardRanking, userAvatarImageLink }),req.body.password, err=>{
     if (err){console.log(err)}
     res.sendStatus(200)
   })
