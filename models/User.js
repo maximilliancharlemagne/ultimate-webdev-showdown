@@ -2,8 +2,8 @@ const { model, Schema } = require('mongoose')
 
 const User = new Schema({
   username: String,
-  wins: Number,
-  loses: Number,
+  leaderboardRanking: Number,
+  userAvatarImageLink: String
 })
 
 User.plugin(require('passport-local-mongoose'))
