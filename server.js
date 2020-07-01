@@ -52,9 +52,13 @@ function xoChooser() {
 io.on('connection', function(socket) {
 
   side = xoChooser()
-   
-    // Use socket to communicate with this particular client only, sending it it's own id
-    socket.emit('welcome', { side });
+  socket.emit('welcome', { side });
+
+  socket.on("squareClick", function (data) {
+    console.log("hey we heard you");
+    console.log(data)
+    io.emit("boardEvent", data)
+  });
     
 });
 

@@ -2,14 +2,15 @@ import openSocket from "socket.io-client";
 const socket = openSocket("http://localhost:3001");
 
 function listenToBoard(cb) {
-  socket.on('squareClick', (data) => {
-    console.log(data)
+  socket.on('boardEvent', (data) => {
+    cb(data)
   })
 
 }
 
-function sendSquareClickEvent(side,index,cb) {
+function sendSquareClickEvent(side,index) {
   //emit a socket.io from handleClick
+  console.log('sending click event...')
   socket.emit('squareClick',{side, index})
 }
 
