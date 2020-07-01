@@ -1,3 +1,7 @@
+//import axios
+import axios from 'axios';
+
+//import React
 import React from 'react';
 
 //import mui-core components
@@ -7,11 +11,47 @@ import Divider from '@material-ui/core/Divider'
 import PlayerCard from '../PlayerCard'
 
 class InfoArea extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      p1: {
+        num: "1",
+        name: "",
+        leaderBoardPos: "",
+      },
+      p2: {
+        num: "2",
+        name: "",
+        leaderBoardPos: "",
+      },
+    };
+  }
   componentDidMount() {
-    //do some stuff
-    //with axios
+    //who is the active player???
+    let currentJWT = localStorage.getItem('JWT')
 
-    //¯\_( ツ )_/¯
+    axios.get(`/api/player/${JWT}`)
+    .then(({data}) => {
+      if(localStorage.getItem('side') == 'x'){
+        this.setState({
+          p1: {
+            num: "1",
+            name: data.name,
+            leaderBoardPos: data.leaderBoardPos,
+          },
+        });
+      }
+      else{
+        this.setState({
+          p2: {
+            num: "1",
+            name: "",
+            leaderBoardPos: data.leaderBoardPos,
+          },
+        });
+      }
+    })
+    .catch(err => console.error(err))
   }
   
   render() {

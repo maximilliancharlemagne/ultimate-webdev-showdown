@@ -53,17 +53,6 @@
               socket.emit('i am client', {data: 'foo!', id: data.id});
           });
 
-          socket.on('error', console.error.bind(console));
-          socket.on('message', console.log.bind(console));
-
-          function addMessage(message) {
-              var text = document.createTextNode(message),
-                  el = document.createElement('li'),
-                  messages = document.getElementById('messages');
-
-              el.appendChild(text);
-              messages.appendChild(el);
-          }
       </script>
   </head>
   
