@@ -1,29 +1,8 @@
 import { createContext } from 'react'
 
 const UserContext = createContext({
-  username: '',
-  password: '',
-
-
-  handleUsernameChange: () => { },
-  handleAddUsername: () => { },
-  handleUpdateUsername: () => { },
-  handleDeleteUsername: () => { },
-
-  handlePasswordChange: () => { },
-  handleAddPassword: () => { },
-  handleAddPassword: () => { },
-  handleUpdatePassword: () => { },
-  handleDeletePassword: () => { }
-
-  // OR
-
-    User: [{
-    username: '',
-    password: '',
-  }
-  ],
-
+  user: {}
+  
   handleInputChange: () => { },
   handleAddUser: () => { },
   handleUpdateUser: () => { },
