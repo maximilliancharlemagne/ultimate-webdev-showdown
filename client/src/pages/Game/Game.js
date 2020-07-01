@@ -43,7 +43,7 @@ class Game extends React.Component {
             </Grid>
             <Grid item md={6}>
               <Paper>
-                <InfoArea currentPlayer="Ben" />
+                <InfoArea currentPlayer="Ben" side = {this.state.side} />
               </Paper>
             </Grid>
           </Grid>
