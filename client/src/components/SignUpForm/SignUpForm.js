@@ -23,36 +23,46 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-const SignUpForm = () => {
+const SignUpForm = (props) => {
   const classes = useStyles()
   return (
-
     <div className={classes.root}>
       <Grid container>
         <Paper className={classes.paper}>
           <form>
             <Grid item>
               <TextField
-                id="new-username-input"
+                name="username"
+                id="username"
                 label="New Username"
                 type="username"
+                value = {props.user.username}
+                onChange={props.handleInputChange}
               />
             </Grid>
             <Grid item>
               <TextField
-                id="new-password-input"
+                name="password"
+                id="password"
                 label="New Password"
                 type="password"
+                value = {props.user.password}
+                onChange={props.handleInputChange}
               />
             </Grid>
             <Grid item>
               <Button variant="contained" color="primary">
-                Create Account</Button>
+                Create Account
+              </Button>
             </Grid>
             <Grid item>
-              <h4>Already a user?<br />Log in here! </h4>
+              <h4>
+                Already a user?
+                <br />
+                Log in here!{" "}
+              </h4>
             </Grid>
-            <Grid item >
+            <Grid item>
               <Link to="/" className="nav-link">
                 <Button variant="contained" color="primary">
                   Log In
@@ -63,8 +73,7 @@ const SignUpForm = () => {
         </Paper>
       </Grid>
     </div>
-
-  )
+  );
 }
 
 export default SignUpForm

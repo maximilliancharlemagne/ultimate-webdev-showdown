@@ -35,14 +35,14 @@ const SignInForm = () => {
     <div className={classes.root}>
       <Grid container>
         <Paper className={classes.paper}>
-          <form onSubmit={handleAddItem}>
+          <form >
             <Grid item>
               <TextField
                 id="username-input"
                 label="Username"
                 type="username"
                 autoComplete="current-username"
-                onChange={handleUsernameChange}
+                // onChange={handleUsernameChange}
               />
             </Grid>
             <Grid item>
@@ -51,12 +51,11 @@ const SignInForm = () => {
                 label="Password"
                 type="password"
                 autoComplete="current-password"
-                onChange={handlePasswordChange}
+                // onChange={handlePasswordChange}
               />
             </Grid>
             <Grid item>
-              <Button variant="contained" color="primary"
-                onClick={handleAddItem}>
+              <Button variant="contained" color="primary">
                 Sign In
               </Button>
             </Grid>
