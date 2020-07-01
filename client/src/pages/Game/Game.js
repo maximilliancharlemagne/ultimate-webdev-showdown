@@ -14,6 +14,9 @@ import InfoArea from '../../components/InfoArea'
 //import socket.io API
 import {listenToBoard, sendSquareClickEvent, assignSide} from '../../api'
 
+//import context
+import SideContext from '../../utils/SideContext'
+
 class Game extends React.Component {
   constructor(props){
     super(props)
@@ -21,15 +24,15 @@ class Game extends React.Component {
     this.state = {
       side: "",
     };
-
-    assignSide(data => {
-      console.log(data)
-      this.setState({side: data.side})
-    })
   }
+
+  componentDidMount() {
+    assignSide((data) => this.setState({ side: data.side }));
+  }
+
   render() {
     return (
-      <>
+      <SideContext.Provider value = {{side: this.state.side}}>
         <Navbar />
         <Container>
           <Grid container>
@@ -45,7 +48,7 @@ class Game extends React.Component {
             </Grid>
           </Grid>
         </Container>
-      </>
+      </SideContext.Provider>
     );
   }
 }
