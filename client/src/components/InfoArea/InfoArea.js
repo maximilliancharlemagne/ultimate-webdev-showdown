@@ -68,7 +68,6 @@ class InfoArea extends React.Component {
           playerName={this.state.p2.name}
           leaderBoardPos={this.state.p2.leaderBoardPos}
         />
-        />
         <Divider />
         <h2>###'s Turn</h2>
         <Divider />
