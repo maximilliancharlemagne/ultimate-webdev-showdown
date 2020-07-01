@@ -23,7 +23,8 @@ class Board extends React.Component {
 
   handleClick (i) {
     //emit a socket.io from handleClick
-    socket.emit('squareClick')
+    socket.emit('squareClick',{data: {side: localStorage.getItem('side'), index: i}})
+    
     const squares = this.state.squares.slice()
     squares[i] = this.state.isXTurn? 'X' : 'O'
     this.setState({squares: squares, isXTurn: !this.state.isXTurn})
