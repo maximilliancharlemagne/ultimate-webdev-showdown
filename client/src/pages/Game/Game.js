@@ -32,18 +32,18 @@ class Game extends React.Component {
 
   render() {
     return (
-      <SideContext.Provider value = {{side: this.state.side}}>
+      <SideContext.Provider value={{ side: this.state.side }}>
         <Navbar />
         <Container>
           <Grid container>
             <Grid item md={6}>
               <Paper>
-                <GameArea />
+                <GameArea side={this.state.side} />
               </Paper>
             </Grid>
             <Grid item md={6}>
               <Paper>
-                <InfoArea currentPlayer="Ben" side = {this.state.side} />
+                <InfoArea currentPlayer="Ben" side={this.state.side} />
               </Paper>
             </Grid>
           </Grid>

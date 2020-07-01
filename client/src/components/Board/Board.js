@@ -11,15 +11,15 @@ class Board extends React.Component {
     super(props)
     this.state = {
       squares: Array(9).fill(null),
-      isXTurn: true
     }
   }
 
   //credit to React Tic Tac Toe tutorial: https://reactjs.org/tutorial/tutorial.html
 
   handleClick (i) {
+    console.log(this.props.side)
     const squares = this.state.squares.slice()
-    squares[i] = this.state.isXTurn? 'X' : 'O'
+    squares[i] = this.props.side.toUpperCase()
     this.setState({squares: squares, isXTurn: !this.state.isXTurn})
   }
 
