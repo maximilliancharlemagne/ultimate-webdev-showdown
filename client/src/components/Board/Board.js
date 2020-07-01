@@ -1,14 +1,10 @@
 //import React
 import React from 'react'
 
-//import socket.io
-import io from 'socket.io'
-
-//setup socket
-let socket = io()
-
 //import custom components
 import Square from '../Square'
+
+//import socket api
 
 class Board extends React.Component {
   constructor (props) {
@@ -22,9 +18,6 @@ class Board extends React.Component {
   //credit to React Tic Tac Toe tutorial: https://reactjs.org/tutorial/tutorial.html
 
   handleClick (i) {
-    //emit a socket.io from handleClick
-    socket.emit('squareClick',{data: {side: localStorage.getItem('side'), index: i}})
-    
     const squares = this.state.squares.slice()
     squares[i] = this.state.isXTurn? 'X' : 'O'
     this.setState({squares: squares, isXTurn: !this.state.isXTurn})

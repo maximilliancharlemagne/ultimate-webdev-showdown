@@ -9,28 +9,45 @@ import Paper from "@material-ui/core/Paper"
 //import custom components
 import Navbar from '../../components/Navbar'
 import GameArea from '../../components/GameArea'
-import InfoArea from '../../components/InfoArea';
+import InfoArea from '../../components/InfoArea'
 
-const Game = () => {
-  return (
-    <>
-      <Navbar/>
-      <Container>
-        <Grid container>
-          <Grid item md={6}>
-            <Paper>
-              <GameArea/>
-            </Paper>
+//import socket.io API
+import {listenToBoard, sendSquareClickEvent, assignSide} from '../../api'
+
+class Game extends React.Component {
+  constructor(props){
+    super(props)
+
+    this.state = {
+      side: "",
+    };
+
+    assignSide(data => {
+      console.log(data)
+      this.setState({side: data.side})
+    })
+  }
+  render() {
+    return (
+      <>
+        <Navbar />
+        <Container>
+          <Grid container>
+            <Grid item md={6}>
+              <Paper>
+                <GameArea />
+              </Paper>
+            </Grid>
+            <Grid item md={6}>
+              <Paper>
+                <InfoArea currentPlayer="Ben" />
+              </Paper>
+            </Grid>
           </Grid>
-          <Grid item md={6}>
-            <Paper>
-              <InfoArea currentPlayer = "Ben"/>
-            </Paper>
-          </Grid>
-        </Grid>
-      </Container>
-    </>
-  );
+        </Container>
+      </>
+    );
+  }
 }
 
 export default Game
