@@ -24,12 +24,15 @@ class SignUp extends React.Component{
       },
     handleInputChange: (event) => {
       let newValue = event.target.value
-
-      this.setState({user: {
+      this.setState({user: {...this.state.user,
         [event.target.name]: newValue
       }})
     },
-    handleAddUser: () => { },
+    handleAddUser: (event) => { 
+      event.preventDefault()
+      console.log(this.state.user.username)
+      console.log(this.state.user.password)
+    },
     handleUpdateUser: () => { },
     handleDeleteUser: () => { }
     }
@@ -55,7 +58,8 @@ class SignUp extends React.Component{
                 </Typography>
               </Paper> */}
               <SignUpForm user = {this.state.user}
-              handleInputChange = {this.state.handleInputChange}/>
+              handleInputChange = {this.state.handleInputChange}
+              handleAddUser = {this.state.handleAddUser}/>
             </Grid>
           </Grid>
         </UserContext.Provider>

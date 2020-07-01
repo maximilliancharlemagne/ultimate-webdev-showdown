@@ -51,7 +51,7 @@ const SignUpForm = (props) => {
               />
             </Grid>
             <Grid item>
-              <Button variant="contained" color="primary">
+              <Button variant="contained" color="primary" onClick={props.handleAddUser}>
                 Create Account
               </Button>
             </Grid>

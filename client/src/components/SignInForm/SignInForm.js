@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 
-const SignInForm = () => {
+const SignInForm = (props) => {
   const classes = useStyles()
   return (
 
@@ -38,24 +38,28 @@ const SignInForm = () => {
           <form >
             <Grid item>
               <TextField
-                id="username-input"
+                name ="username"
+                id="username"
                 label="Username"
                 type="username"
                 autoComplete="current-username"
-                // onChange={handleUsernameChange}
+                value={props.user.username}
+                onChange={props.handleInputChange}
               />
             </Grid>
             <Grid item>
               <TextField
+                name="password"
                 id="password-input"
                 label="Password"
                 type="password"
-                autoComplete="current-password"
-                // onChange={handlePasswordChange}
+                autoComplete="password"
+                value={props.user.password}
+                onChange={props.handleInputChange}
               />
             </Grid>
             <Grid item>
-              <Button variant="contained" color="primary">
+              <Button variant="contained" color="primary" onClick={props.handleAddUser}>
                 Sign In
               </Button>
             </Grid>
