@@ -58,15 +58,20 @@ class InfoArea extends React.Component {
     return (
       <>
         <h1>Info Area</h1>
-        <PlayerCard num="1" playerName="Ben Roznos" leaderBoardPos="1" />
-        <PlayerCard num="2" playerName="Kele Palafox" leaderBoardPos="2" />
-
+        <PlayerCard
+          num="1"
+          playerName={this.state.p1.name}
+          leaderBoardPos={this.state.p1.leaderBoardPos}
+        />
+        <PlayerCard
+          num="2"
+          playerName={this.state.p2.name}
+          leaderBoardPos={this.state.p2.leaderBoardPos}
+        />
+        />
         <Divider />
-
         <h2>###'s Turn</h2>
-
         <Divider />
-
         <h2>Score</h2>
         <h3>Player 1: </h3>
         <h3>Player 2: </h3>
