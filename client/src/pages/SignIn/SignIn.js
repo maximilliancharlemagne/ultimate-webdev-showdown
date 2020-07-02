@@ -1,16 +1,14 @@
+//import React
 import React from 'react'
 
-
+//import mui core components
 import Grid from '@material-ui/core/Grid'
 
-
+//import custom components
 import UserNav from '../../components/UserNav'
 import SignInForm from '../../components/SignInForm'
 
-
-import UserContext from '../../utils/UserContext'
-
-import UserApi from'../../utils/UserAPI'
+//import API
 import UserAPI from '../../utils/UserAPI'
 
 
@@ -45,7 +43,7 @@ class SignIn extends React.Component {
   }
   render() {
     return(
-      <UserContext.Provider value={this.state}>
+      <>
       <Grid
         container
         direction="column"
@@ -61,7 +59,7 @@ class SignIn extends React.Component {
               handleAddUser = {this.state.handleAddUser} />
         </Grid>
       </Grid>
-      </UserContext.Provider>
+      </>
   )
   }
 }
