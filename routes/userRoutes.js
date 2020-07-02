@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken')
 const passport = require('passport')
 
 //get player info
-router.get('/users/:currentJWT',(req,res) => {
+router.get('/users/getData/:currentJWT',(req,res) => {
   let myJWT = req.params.currentJWT
 })
 
