@@ -30,7 +30,7 @@ class InfoArea extends React.Component {
     //who is the active player???
     let currentJWT = localStorage.getItem('JWT')
 
-    axios.get(`/api/player/${currentJWT}`)
+    axios.get(`/api/users/${currentJWT}`)
     .then(({data}) => {
       if(this.props.side === 'x'){
         this.setState({
