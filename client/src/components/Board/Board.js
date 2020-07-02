@@ -1,23 +1,36 @@
+//import React
 import React from 'react'
 
 //import custom components
 import Square from '../Square'
+
+//import socket api
+import {listenToBoard, sendSquareClickEvent, assignSide} from '../../api'
 
 class Board extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
       squares: Array(9).fill(null),
-      isXTurn: true
     }
+
+    listenToBoard(data => {
+      console.log(data)
+      let newSquares = this.state.squares.slice()
+      newSquares[data.index] = data.side.toUpperCase()
+      this.setState({
+        squares: newSquares
+      })
+    })
   }
 
   //credit to React Tic Tac Toe tutorial: https://reactjs.org/tutorial/tutorial.html
 
   handleClick (i) {
-    const squares = this.state.squares.slice()
-    squares[i] = this.state.isXTurn? 'X' : 'O'
-    this.setState({squares: squares, isXTurn: !this.state.isXTurn})
+    sendSquareClickEvent(this.props.side,i)
+    // const squares = this.state.squares.slice()
+    // squares[i] = this.props.side.toUpperCase()
+    // this.setState({squares: squares})
   }
 
   renderSquare (i) {

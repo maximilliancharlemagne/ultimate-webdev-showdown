@@ -9,28 +9,48 @@ import Paper from "@material-ui/core/Paper"
 //import custom components
 import Navbar from '../../components/Navbar'
 import GameArea from '../../components/GameArea'
-import InfoArea from '../../components/InfoArea';
+import InfoArea from '../../components/InfoArea'
 
-const Game = () => {
-  return (
-    <>
-      <Navbar/>
-      <Container>
-        <Grid container>
-          <Grid item md={6}>
-            <Paper>
-              <GameArea/>
-            </Paper>
+//import socket.io API
+import {listenToBoard, sendSquareClickEvent, assignSide} from '../../api'
+
+//import context
+import SideContext from '../../utils/SideContext'
+
+class Game extends React.Component {
+  constructor(props){
+    super(props)
+
+    this.state = {
+      side: "",
+    };
+  }
+
+  componentDidMount() {
+    assignSide((data) => this.setState({ side: data.side }));
+  }
+
+  render() {
+    return (
+      <SideContext.Provider value={{ side: this.state.side }}>
+        <Navbar />
+        <Container>
+          <Grid container>
+            <Grid item md={6}>
+              <Paper>
+                <GameArea side={this.state.side} />
+              </Paper>
+            </Grid>
+            <Grid item md={6}>
+              <Paper>
+                <InfoArea side={this.state.side} />
+              </Paper>
+            </Grid>
           </Grid>
-          <Grid item md={6}>
-            <Paper>
-              <InfoArea currentPlayer = "Ben"/>
-            </Paper>
-          </Grid>
-        </Grid>
-      </Container>
-    </>
-  );
+        </Container>
+      </SideContext.Provider>
+    );
+  }
 }
 
 export default Game
