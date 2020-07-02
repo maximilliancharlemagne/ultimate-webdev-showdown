@@ -1,3 +1,4 @@
+// import React from 'react'
 import React from 'react'
 import { Link } from 'react-router-dom'
 
@@ -7,6 +8,8 @@ import TextField from '@material-ui/core/TextField';
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button'
 import Grid from '@material-ui/core/Grid'
+
+
 
 
 
@@ -24,32 +27,38 @@ const useStyles = makeStyles((theme) => ({
 
 
 
-const SignInForm = () => {
+const SignInForm = (props) => {
   const classes = useStyles()
   return (
 
     <div className={classes.root}>
       <Grid container>
         <Paper className={classes.paper}>
-          <form>
+          <form >
             <Grid item>
               <TextField
-                id="standard-username-input"
+                name ="username"
+                id="username"
                 label="Username"
                 type="username"
                 autoComplete="current-username"
+                value={props.user.username}
+                onChange={props.handleInputChange}
               />
             </Grid>
             <Grid item>
               <TextField
-                id="standard-password-input"
+                name="password"
+                id="password-input"
                 label="Password"
                 type="password"
-                autoComplete="current-password"
+                autoComplete="password"
+                value={props.user.password}
+                onChange={props.handleInputChange}
               />
             </Grid>
             <Grid item>
-              <Button variant="contained" color="primary">
+              <Button variant="contained" color="primary" onClick={props.handleAddUser}>
                 Sign In
               </Button>
             </Grid>

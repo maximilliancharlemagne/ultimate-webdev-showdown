@@ -1,13 +1,49 @@
+//import React
 import React from 'react'
+
+//import mui core components
 import Grid from '@material-ui/core/Grid'
+
+//import custom components
 import UserNav from '../../components/UserNav'
 import SignInForm from '../../components/SignInForm'
 
+//import API
+import UserAPI from '../../utils/UserAPI'
 
 
-const SignIn = () => {
-  return (
-    <>
+class SignIn extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      user: {
+        username: '',
+        password: ''
+      },
+      handleInputChange: (event) => {
+        let newValue = event.target.value
+        this.setState({
+          user: {
+            ...this.state.user,
+            [event.target.name]: newValue
+          }
+        })
+      },
+      handleAddUser: (event) => {
+        event.preventDefault()
+        let username = this.state.user.username
+        let password = this.state.user.password
+        console.log(this.state.user.username)
+        console.log(this.state.user.password)
+        UserAPI.login(username, password)
+      },
+      handleUpdateUser: () => { },
+      handleDeleteUser: () => { }
+    }
+  }
+  render() {
+    return(
+      <>
       <Grid
         container
         direction="column"
@@ -18,13 +54,15 @@ const SignIn = () => {
           <UserNav />
         </Grid>
         <Grid item>
-          <SignInForm />
+            <SignInForm user = {this.state.user}
+              handleInputChange = {this.state.handleInputChange}
+              handleAddUser = {this.state.handleAddUser} />
         </Grid>
       </Grid>
-    </>
+      </>
   )
+  }
 }
-
 export default SignIn
 
 
