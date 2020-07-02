@@ -28,25 +28,23 @@ class InfoArea extends React.Component {
   }
   componentDidMount() {
     //who is the active player???
-    let currentJWT = localStorage.getItem('JWT')
-
-    axios.get(`/api/player/${currentJWT}`)
+    axios.get(`/api/users/getData/${localStorage.getItem('JWT')}`)
     .then(({data}) => {
       if(this.props.side === 'x'){
         this.setState({
           p1: {
             num: "1",
-            name: data.name,
-            leaderBoardPos: data.leaderBoardPos,
+            name: data.username,
+            leaderBoardPos: data.leaderboardRanking,
           },
         });
       }
       else{
         this.setState({
           p2: {
-            num: "1",
-            name: "",
-            leaderBoardPos: data.leaderBoardPos,
+            num: "2",
+            name: data.username,
+            leaderBoardPos: data.leaderboardRanking,
           },
         });
       }

@@ -5,7 +5,7 @@ import React from 'react'
 import Square from '../Square'
 
 //import socket api
-import {listenToBoard, sendSquareClickEvent, assignSide} from '../../api'
+import {listenToBoard, sendSquareClickEvent, assignSide} from '../../utils/SocketAPI'
 
 class Board extends React.Component {
   constructor (props) {

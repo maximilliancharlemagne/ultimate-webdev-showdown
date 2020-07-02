@@ -12,7 +12,7 @@ import GameArea from '../../components/GameArea'
 import InfoArea from '../../components/InfoArea'
 
 //import socket.io API
-import {listenToBoard, sendSquareClickEvent, assignSide} from '../../api'
+import {listenToBoard, sendSquareClickEvent, assignSide} from '../../utils/SocketAPI'
 
 //import context
 import SideContext from '../../utils/SideContext'
