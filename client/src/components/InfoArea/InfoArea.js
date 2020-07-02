@@ -28,7 +28,8 @@ class InfoArea extends React.Component {
   }
   componentDidMount() {
     //who is the active player???
-    axios.get(`/api/users/getData/${localStorage.getItem('JWT')}`)
+    let currentJWT = localStorage.getItem('JWT')
+    axios.get(`/api/users/`,{headers: {'Authorization': `Bearer ${currentJWT}`}})
     .then(({data}) => {
       if(this.props.side === 'x'){
         this.setState({
