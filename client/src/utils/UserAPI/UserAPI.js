@@ -11,6 +11,7 @@ const UserAPI = {
         console.log(data)
         if(data){
           localStorage.setItem('JWT',data)
+          window.location = "game";
         } else{
           console.log('incorrect Username or Password')
         }
@@ -24,6 +25,7 @@ const UserAPI = {
       })
       .then(({data})=>{
         console.log(data)
+        window.location = '/'
       })
     },
 }
