@@ -30,6 +30,7 @@
   },
   "homepage": "https://github.com/maximilliancharlemagne/ultimate-webdev-showdown#readme",
   "dependencies": {
+    "axios": "^0.19.2",
     "concurrently": "^5.2.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",

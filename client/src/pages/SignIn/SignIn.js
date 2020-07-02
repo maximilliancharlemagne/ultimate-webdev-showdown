@@ -10,6 +10,9 @@ import SignInForm from '../../components/SignInForm'
 
 import UserContext from '../../utils/UserContext'
 
+import UserApi from'../../utils/UserAPI'
+import UserAPI from '../../utils/UserAPI'
+
 
 class SignIn extends React.Component {
   constructor(props) {
@@ -30,8 +33,11 @@ class SignIn extends React.Component {
       },
       handleAddUser: (event) => {
         event.preventDefault()
+        let username = this.state.user.username
+        let password = this.state.user.password
         console.log(this.state.user.username)
         console.log(this.state.user.password)
+        UserAPI.login(username, password)
       },
       handleUpdateUser: () => { },
       handleDeleteUser: () => { }

@@ -12,6 +12,7 @@ import SignUpForm from '../../components/SignUpForm'
 
 //import utils
 import UserContext from '../../utils/UserContext'
+import UserAPI from '../../utils/UserAPI'
 
 
 class SignUp extends React.Component{
@@ -32,6 +33,9 @@ class SignUp extends React.Component{
       event.preventDefault()
       console.log(this.state.user.username)
       console.log(this.state.user.password)
+      let username = this.state.user.username
+      let password = this.state.user.password
+      UserAPI.signUp(username, password)
     },
     handleUpdateUser: () => { },
     handleDeleteUser: () => { }
