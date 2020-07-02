@@ -11,7 +11,6 @@ import UserNav from '../../components/UserNav'
 import SignUpForm from '../../components/SignUpForm'
 
 //import utils
-import UserContext from '../../utils/UserContext'
 import UserAPI from '../../utils/UserAPI'
 
 
@@ -43,7 +42,7 @@ class SignUp extends React.Component{
   }
   render() {
       return (
-        <UserContext.Provider value = {this.state}>
+        <>
           <Grid
             container
             direction="column"
@@ -66,7 +65,7 @@ class SignUp extends React.Component{
               handleAddUser = {this.state.handleAddUser}/>
             </Grid>
           </Grid>
-        </UserContext.Provider>
+        </>
       );
   }
 }
