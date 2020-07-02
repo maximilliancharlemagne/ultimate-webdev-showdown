@@ -26,12 +26,6 @@ const UserAPI = {
         console.log(data)
       })
     },
-
-
-  getUser:() => axios.get('/api/user'),
-  createUsername: item => axios.post('/api/user'),
-  updateUsername: (id, updates) => axios.put(`/api/user/${id}`, updates),
-  deleteUsername: id => axios.delete(`/api/user/${id}`)
 }
 
 export default UserAPI
