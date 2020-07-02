@@ -1,6 +1,5 @@
 // import React from 'react'
-import React, { useContext } from 'react'
-import UserContext from '../../utils/UserContext'
+import React from 'react'
 import { Link } from 'react-router-dom'
 
 import { makeStyles } from '@material-ui/core/styles'
