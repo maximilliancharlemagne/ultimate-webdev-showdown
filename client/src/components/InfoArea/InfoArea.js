@@ -32,7 +32,7 @@ class InfoArea extends React.Component {
 
     axios.get(`/api/player/${currentJWT}`)
     .then(({data}) => {
-      if(this.state.side === 'x'){
+      if(this.props.side === 'x'){
         this.setState({
           p1: {
             num: "1",
