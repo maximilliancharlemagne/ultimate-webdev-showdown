@@ -15,30 +15,6 @@ import Avatar from "@material-ui/core/Avatar";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 
-//create styles
-const useStyles = makeStyles((theme) => ({
-  root: {
-    "& > *": {
-      margin: theme.spacing(1),
-    },
-    flexGrow: 1,
-    margin: "20px",
-    padding: "10px",
-  },
-  paper: {
-    padding: theme.spacing(10),
-    textAlign: "center",
-    color: theme.palette.text.secondary,
-    marginTop: "20px",
-  },
-  avatar: {
-    width: theme.spacing(7),
-    height: theme.spacing(7),
-    marginBottom: "10px",
-    marginLeft: "65px",
-  },
-}));
-
 class ProfileForm extends React.Component {
   constructor(props) {
     super(props)
@@ -71,7 +47,7 @@ class ProfileForm extends React.Component {
 
   render() {
     return (
-      <div className={classes.root}>
+      <div className="root">
         <Grid
           container
           direction="column"
@@ -79,13 +55,13 @@ class ProfileForm extends React.Component {
           alignItems="center"
           spacing={1}
         >
-          <Paper className={classes.paper}>
+          <Paper className="paper">
             <form>
               <Grid item>
                 <Avatar
                   alt="Avatar"
                   src="/static/images/avatar/1.jpg"
-                  className={classes.avatar}
+                  className="avatar"
                 />
               </Grid>
               <br />
