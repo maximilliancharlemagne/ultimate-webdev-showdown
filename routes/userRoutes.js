@@ -4,8 +4,9 @@ const jwt = require('jsonwebtoken')
 const passport = require('passport')
 
 //get player info
-router.get('/users/getData/:currentJWT',(req,res) => {
-  let myJWT = req.params.currentJWT
+router.get('/users/',passport.authenticate('jwt'),(req,res) => {
+  console.log('this route works')
+  res.json(req.user)
 })
 
 // sign in funtionality
