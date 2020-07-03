@@ -1,5 +1,5 @@
 import openSocket from "socket.io-client";
-const socket = openSocket("http://localhost:3001");
+const socket = openSocket();
 
 function listenToBoard(cb) {
   socket.on('boardEvent', (data) => {
