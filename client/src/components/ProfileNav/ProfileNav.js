@@ -1,5 +1,8 @@
 import React from 'react';
 
+import { Link } from 'react-router-dom'
+
+
 //import MUI makestyles tool
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -12,6 +15,7 @@ import IconButton from "@material-ui/core/IconButton";
 
 //import MUI icon components
 import MenuIcon from "@material-ui/icons/Menu";
+
 
 //create styles
 const useStyles = makeStyles((theme) => ({
@@ -32,19 +36,23 @@ const ProfileNav = () => {
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
-          <IconButton
+          {/* <IconButton
             edge="start"
             className={classes.menuButton}
             color="inherit"
             aria-label="menu"
           >
             <MenuIcon />
-          </IconButton>
+          </IconButton> */}
           <Typography variant="h6" className={classes.title}>
             Profile
           </Typography>
-          <Button color="inherit">Go To Game</Button>
-          <Button color="inherit">Log Out</Button>
+          <Link to="/game" className="nav-link">
+            <Button variant="contained" color="primary">Go To Game</Button>
+          </Link>
+          <Link to="/" className="nav-link">
+            <Button variant="contained" color="primary">Log Out</Button>
+          </Link>
         </Toolbar>
       </AppBar>
     </div>
