@@ -37,7 +37,7 @@ const ProfileNav = () => {
             <Button variant="contained" color="primary">Go To Game</Button>
           </Link>
           <Link to="/" className="nav-link">
-            <Button variant="contained" color="primary">Log Out</Button>
+            <Button variant="contained" color="primary" >Log Out</Button>
           </Link>
         </Toolbar>
       </AppBar>
@@ -46,3 +46,5 @@ const ProfileNav = () => {
 }
 
 export default ProfileNav
+
+// color = "primary.contrastText"
