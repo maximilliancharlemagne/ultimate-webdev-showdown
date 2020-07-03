@@ -31,24 +31,8 @@ class InfoArea extends React.Component {
     let currentJWT = localStorage.getItem('JWT')
     axios.get(`/api/users/`,{headers: {'Authorization': `Bearer ${currentJWT}`}})
     .then(({data}) => {
-      if(this.props.side === 'x'){
-        this.setState({
-          p1: {
-            num: "1",
-            name: data.username,
-            leaderBoardPos: data.leaderboardRanking,
-          },
-        });
-      }
-      else{
-        this.setState({
-          p2: {
-            num: "2",
-            name: data.username,
-            leaderBoardPos: data.leaderboardRanking,
-          },
-        });
-      }
+      console.log(data)
+      this.setState({player: {...this.state.player, name: data.name, leaderboardRanking: data.leaderboardRanking}})
     })
     .catch(err => console.error(err))
   }
@@ -58,17 +42,9 @@ class InfoArea extends React.Component {
       <>
         <h1>Info Area</h1>
         <PlayerCard
-          num="1"
-          playerName={this.state.p1.name}
-          leaderBoardPos={this.state.p1.leaderBoardPos}
+          playerName={this.state.player.name}
+          leaderBoardPos={this.state.player.leaderboardRanking}
         />
-        <PlayerCard
-          num="2"
-          playerName={this.state.p2.name}
-          leaderBoardPos={this.state.p2.leaderBoardPos}
-        />
-        <Divider />
-        <h2>###'s Turn</h2>
         <Divider />
         <h2>Score</h2>
         <h3>Player 1: </h3>

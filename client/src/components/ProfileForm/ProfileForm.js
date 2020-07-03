@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 //import axios
 import axios from 'axios'
 
-//import MUI makestyles tool
-import { makeStyles } from "@material-ui/core/styles";
+//import CSS
+import './ProfileForm.css'
 
 //import MUI core components
 import Grid from "@material-ui/core/Grid";
@@ -38,8 +38,10 @@ class ProfileForm extends React.Component {
         let currentJWT = localStorage.getItem('JWT')
         axios.delete("/api/users/deleteUser", {
           headers: { Authorization: `Bearer ${currentJWT}` },
-        }).then(
-          window.location = '/'
+        }).then(() => {
+          localStorage.removeItem("JWT");
+          window.location = "/";
+        }
         );
       },
     };
