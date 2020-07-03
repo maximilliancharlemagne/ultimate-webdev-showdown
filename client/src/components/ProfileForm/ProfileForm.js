@@ -63,28 +63,24 @@ const ProfileForm = (props) => {
                   type="url"
                   autoComplete="Paste Avatar URL"
                   // value={props.user.userAvatarImageLink}
-                  onChange={props.handleInputChange}
+                  // onChange={props.handleInputChange}
                 />
               </Grid>
               <Grid item>
-                <Link to="" className="nav-link">
                   <Button variant="contained" color="primary" onClick={props.handleAddUser}>
                     Change Avatar
                   </Button>
-                </Link>
               </Grid>
             </Paper>
             <Paper borderColor="secondary.main" className={classes.paper}>
               <Grid item>
-                <Link to="" className="nav-link">
                   <Button
                     variant="contained"
                     color="secondary"
-                    onClick={props.handleDeleteUser}
+                    // onClick={props.handleDeleteUser}
                   >
                     Delete Profile
                 </Button>
-                </Link>
               </Grid>
             </Paper>
           </form>
