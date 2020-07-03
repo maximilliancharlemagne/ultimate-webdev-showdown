@@ -15,32 +15,6 @@ import ProfileForm from '../../components/ProfileForm'
 
 
 class Profile extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      user: {
-        userAvatarImageLink: ''
-      },
-      handleInputChange: (event) => {
-        let newValue = event.target.value
-        this.setState({
-          user: {
-            ...this.state.user,
-            [event.target.name]: newValue
-          }
-        })
-      },
-      handleAddUser: (event) => {
-        event.preventDefault()
-        let userAvatarImageLink = this.state.user.userAvatarImageLink
-        console.log(this.state.user.userAvatarImageLink)
-        // UserAPI.login(userAvatarImageLink)
-      },
-      handleUpdateUser: () => { },
-      handleDeleteUser: () => { }
-    }
-  }
-
   render() {
     return (
       <>

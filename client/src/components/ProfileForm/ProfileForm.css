@@ -1,0 +1,18 @@
+.root {
+  flex-grow: 1; 
+  margin: 20px;
+  padding: 10px;
+}
+
+.paper {
+  padding: 20px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.avatar {
+  width: 200px;
+  height:200px;
+  margin-bottom: 10px;
+  margin-left: 65px;
+}

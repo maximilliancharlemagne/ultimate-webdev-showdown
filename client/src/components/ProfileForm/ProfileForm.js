@@ -1,57 +1,86 @@
 // import React from 'react'
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { Link } from "react-router-dom";
+
+//import axios
+import axios from 'axios'
 
 //import MUI makestyles tool
-import { makeStyles } from '@material-ui/core/styles'
+import { makeStyles } from "@material-ui/core/styles";
 
 //import MUI core components
-import Grid from '@material-ui/core/Grid'
-import Paper from '@material-ui/core/Paper'
-import Avatar from '@material-ui/core/Avatar'
-import TextField from '@material-ui/core/TextField'
-import Button from '@material-ui/core/Button'
-
+import Grid from "@material-ui/core/Grid";
+import Paper from "@material-ui/core/Paper";
+import Avatar from "@material-ui/core/Avatar";
+import TextField from "@material-ui/core/TextField";
+import Button from "@material-ui/core/Button";
 
 //create styles
 const useStyles = makeStyles((theme) => ({
   root: {
-    '& > *': {
+    "& > *": {
       margin: theme.spacing(1),
     },
     flexGrow: 1,
-    margin: '20px',
-    padding: '10px'
+    margin: "20px",
+    padding: "10px",
   },
   paper: {
     padding: theme.spacing(10),
-    textAlign: 'center',
+    textAlign: "center",
     color: theme.palette.text.secondary,
-    marginTop: '20px',
+    marginTop: "20px",
   },
   avatar: {
     width: theme.spacing(7),
     height: theme.spacing(7),
-    marginBottom: '10px',
-    marginLeft: '65px',
+    marginBottom: "10px",
+    marginLeft: "65px",
   },
 }));
 
+class ProfileForm extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      user: {
+        userAvatarImageLink: "",
+      },
+      handleInputChange: (event) => {
+        let newValue = event.target.value;
+        this.setState({
+          user: {
+            ...this.state.user,
+            [event.target.name]: newValue,
+          },
+        });
+      },
+      handleUpdateUser: () => {
+        let userAvatarImageLink = this.state.user.userAvatarImageLink;
+      },
+      handleDeleteUser: () => {
+        let currentJWT = localStorage.getItem('JWT')
+        axios.delete("/api/users/deleteUser", {
+          headers: { Authorization: `Bearer ${currentJWT}` },
+        }).then(
+          window.location = '/'
+        );
+      },
+    };
+  }
 
-
-const ProfileForm = (props) => {
-  const classes = useStyles()
-  return (
-    <div className={classes.root}>
-      <Grid
-        container
-        direction="column"
-        justify="center"
-        alignItems="center"
-        spacing={1}
-      >
-        <Paper className={classes.paper}>
-          <form>
+  render() {
+    return (
+      <div className={classes.root}>
+        <Grid
+          container
+          direction="column"
+          justify="center"
+          alignItems="center"
+          spacing={1}
+        >
+          <Paper className={classes.paper}>
+            <form>
               <Grid item>
                 <Avatar
                   alt="Avatar"
@@ -59,7 +88,7 @@ const ProfileForm = (props) => {
                   className={classes.avatar}
                 />
               </Grid>
-              <br/>
+              <br />
               <Grid item>
                 <TextField
                   name="avatar"
@@ -71,31 +100,31 @@ const ProfileForm = (props) => {
                   // onChange={props.handleInputChange}
                 />
               </Grid>
-              <br/>
+              <br />
               <Grid item>
                 <Button
                   variant="contained"
                   color="primary"
-                  onClick={props.handleAddUser}
                 >
                   Change Avatar
                 </Button>
               </Grid>
-              <br/>
+              <br />
               <Grid item>
                 <Button
                   variant="contained"
                   color="secondary"
-                  // onClick={props.handleDeleteUser}
+                  onClick={this.state.handleDeleteUser}
                 >
                   Delete Profile
                 </Button>
               </Grid>
-          </form>
-        </Paper>
-      </Grid>
-    </div>
-  );
+            </form>
+          </Paper>
+        </Grid>
+      </div>
+    );
+  }
 }
 
-export default ProfileForm
+export default ProfileForm;
