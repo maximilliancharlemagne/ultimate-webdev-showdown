@@ -15,9 +15,32 @@ import ProfileForm from '../../components/ProfileForm'
 
 
 class Profile extends React.Component {
-  constructor() {
-    super()
-
+  constructor(props) {
+    super(props)
+    this.state = {
+      user: {
+        // username: '',
+        // password: '',
+        userAvatarImageLink: '',
+      },
+      handleInputChange: (event) => {
+        let newValue = event.target.value
+        this.setState({
+          user: {
+            ...this.state.user,
+            [event.target.name]: newValue
+          }
+        })
+      },
+      handleAddUser: (event) => {
+        event.preventDefault()
+        let userAvatarImageLink = this.state.user.userAvatarImageLink
+        console.log(this.state.user.userAvatarImageLink)
+        // UserAPI.login(userAvatarImageLink)
+      },
+      handleUpdateUser: () => { },
+      handleDeleteUser: () => { }
+    }
   }
 
   render() {
@@ -37,11 +60,8 @@ class Profile extends React.Component {
             <Paper>
             </Paper>
           </Grid>
-
         </Grid>
       </>
-
-
     );
   }
 }
