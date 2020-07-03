@@ -33,16 +33,23 @@ const ProfileNav = () => {
           <Typography variant="h6" className={classes.title}>
             Profile
           </Typography>
-          <Link to="/game" className="nav-link">
-            <Button variant="contained" color="primary">Go To Game</Button>
-          </Link>
-          <Link to="/" className="nav-link">
-            <Button variant="contained" color="primary" >Log Out</Button>
-          </Link>
+            <Button to ="/game" component = {Link} variant="contained" color="primary">
+              Go To Game
+            </Button>
+          <Button
+            onClick={() => {
+              localStorage.removeItem("JWT");
+              window.location = "signIn";
+            }}
+            variant="contained"
+            color="primary"
+          >
+            Log Out
+          </Button>
         </Toolbar>
       </AppBar>
     </div>
-  )
+  );
 }
 
 export default ProfileNav

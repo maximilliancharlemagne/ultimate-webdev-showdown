@@ -14,6 +14,9 @@ import IconButton from "@material-ui/core/IconButton";
 //import MUI icon components
 import MenuIcon from "@material-ui/icons/Menu";
 
+//import react router things
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+
 //create styles
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -44,8 +47,11 @@ const Navbar = () => {
           <Typography variant="h6" className={classes.title}>
             Game
           </Typography>
-          <Button color="inherit">Settings</Button>
-          <Button color="inherit">Log Out</Button>
+          <Button to = "/profile" component = {Link} color="inherit">Profile</Button>
+          <Button onClick = {() => {
+            localStorage.removeItem('JWT')
+            window.location = '/'
+          }} color="inherit">Log Out</Button>
         </Toolbar>
       </AppBar>
     </div>
