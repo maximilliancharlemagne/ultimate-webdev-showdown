@@ -7,6 +7,7 @@ import './App.css'
 //import pages
 import SignIn from './pages/SignIn'
 import SignUp from './pages/SignUp'
+import Profile from './pages/Profile'
 import Game from './pages/Game'
 
 function App() {
@@ -19,9 +20,11 @@ function App() {
         <Route exact path='/SignUp'>
           <SignUp />
         </Route>
-        <Route exact path = "/game">
-          {/* Putting the game page in root for testing purposes */}
-          <Game/>
+        <Route exact path='/profile'>
+          <Profile />
+        </Route>
+        <Route exact path="/game">
+          <Game />
         </Route>
       </Switch>
     </Router>
