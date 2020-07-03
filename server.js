@@ -18,13 +18,7 @@ app.use(passport.initialize())
 app.use(passport.session())
 app.use(require("./routes"))
 
-app.get("/*", function (req, res) {
-  res.sendFile(path.join(__dirname, "path/to/your/index.html"), function (err) {
-    if (err) {
-      res.status(500).send(err);
-    }
-  });
-});
+app.get('/','/index.html')
 
 const server = http.createServer(app)
 passport.use(new Strategy(User.authenticate()))
