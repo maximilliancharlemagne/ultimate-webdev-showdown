@@ -19,9 +19,7 @@ class Profile extends React.Component {
     super(props)
     this.state = {
       user: {
-        // username: '',
-        // password: '',
-        userAvatarImageLink: '',
+        userAvatarImageLink: ''
       },
       handleInputChange: (event) => {
         let newValue = event.target.value

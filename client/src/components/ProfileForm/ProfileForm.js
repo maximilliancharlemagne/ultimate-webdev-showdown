@@ -48,13 +48,18 @@ const ProfileForm = (props) => {
         direction="column"
         justify="center"
         alignItems="center"
+        spacing={1}
       >
         <Paper className={classes.paper}>
-          <form >
-            <Paper className={classes.paper}>
+          <form>
               <Grid item>
-                <Avatar alt="Avatar" src="/static/images/avatar/1.jpg" className={classes.avatar} />
+                <Avatar
+                  alt="Avatar"
+                  src="/static/images/avatar/1.jpg"
+                  className={classes.avatar}
+                />
               </Grid>
+              <br/>
               <Grid item>
                 <TextField
                   name="avatar"
@@ -66,28 +71,31 @@ const ProfileForm = (props) => {
                   // onChange={props.handleInputChange}
                 />
               </Grid>
+              <br/>
               <Grid item>
-                  <Button variant="contained" color="primary" onClick={props.handleAddUser}>
-                    Change Avatar
-                  </Button>
-              </Grid>
-            </Paper>
-            <Paper borderColor="secondary.main" className={classes.paper}>
-              <Grid item>
-                  <Button
-                    variant="contained"
-                    color="secondary"
-                    // onClick={props.handleDeleteUser}
-                  >
-                    Delete Profile
+                <Button
+                  variant="contained"
+                  color="primary"
+                  onClick={props.handleAddUser}
+                >
+                  Change Avatar
                 </Button>
               </Grid>
-            </Paper>
+              <br/>
+              <Grid item>
+                <Button
+                  variant="contained"
+                  color="secondary"
+                  // onClick={props.handleDeleteUser}
+                >
+                  Delete Profile
+                </Button>
+              </Grid>
           </form>
         </Paper>
       </Grid>
     </div>
-  )
+  );
 }
 
 export default ProfileForm
