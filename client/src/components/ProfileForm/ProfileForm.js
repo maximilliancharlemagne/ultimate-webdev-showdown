@@ -20,7 +20,7 @@ class ProfileForm extends React.Component {
     super(props)
     this.state = {
       user: {
-        userAvatarImageLink: "",
+        avatar: "",
       },
       handleInputChange: (event) => {
         let newValue = event.target.value;
@@ -32,7 +32,13 @@ class ProfileForm extends React.Component {
         });
       },
       handleUpdateUser: () => {
-        let userAvatarImageLink = this.state.user.userAvatarImageLink;
+        let currentJWT = localStorage.getItem("JWT");
+        axios.put("/api/users/updateAvatar", {
+          data: {
+            newLink: this.state.user.avatar,
+          },
+          headers: { Authorization: `Bearer ${currentJWT}` },
+        });
       },
       handleDeleteUser: () => {
         let currentJWT = localStorage.getItem('JWT')
@@ -62,7 +68,7 @@ class ProfileForm extends React.Component {
               <Grid item>
                 <Avatar
                   alt="Avatar"
-                  src="/static/images/avatar/1.jpg"
+                  src={this.state.user.avatar}
                   className="avatar"
                 />
               </Grid>
@@ -70,12 +76,12 @@ class ProfileForm extends React.Component {
               <Grid item>
                 <TextField
                   name="avatar"
-                  id="avatar-input"
+                  id="avatar"
                   label="Paste Avatar Link"
                   type="url"
                   autoComplete="Paste Avatar URL"
-                  // value={props.user.userAvatarImageLink}
-                  // onChange={props.handleInputChange}
+                  value={this.state.user.userAvatarImageLink}
+                  onChange={this.state.handleInputChange}
                 />
               </Grid>
               <br />
@@ -83,6 +89,7 @@ class ProfileForm extends React.Component {
                 <Button
                   variant="contained"
                   color="primary"
+                  onClick = {this.state.handleUpdateUser}
                 >
                   Change Avatar
                 </Button>

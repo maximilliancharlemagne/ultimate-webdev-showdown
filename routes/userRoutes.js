@@ -10,7 +10,7 @@ router.get('/users/',passport.authenticate('jwt'),(req,res) => {
 })
 
 // change user's avatar picture
-router.put('/users/updatePicture',passport.authenticate('jwt'),(req,res)=>{
+router.put('/users/updateAvatar',passport.authenticate('jwt'),(req,res)=>{
   User.findByIdAndUpdate(req.user._id, { userAvatarImageLink: req.body.newLink},{new:true},(err,user)=>{
     res.json(user)
   })
