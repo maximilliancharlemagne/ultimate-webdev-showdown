@@ -67,7 +67,7 @@ io.on('connection', function(socket) {
 
 require('./config')
 .then( ()=> {
-  server.listen(process.env.PORT || 3001)
+  server.listen(process.env.PORT)
   console.log(`Server running on: ` + process.env.PORT)})
 .catch(err=>console.log(err))
 
