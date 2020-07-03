@@ -33,10 +33,7 @@ class ProfileForm extends React.Component {
       },
       handleUpdateUser: () => {
         let currentJWT = localStorage.getItem("JWT");
-        axios.put("/api/users/updateAvatar", {
-          data: {
-            newLink: this.state.user.avatar,
-          },
+        axios.put("/api/users/updateAvatar", {newLink: this.state.user.avatar},{
           headers: { Authorization: `Bearer ${currentJWT}` },
         });
       },
