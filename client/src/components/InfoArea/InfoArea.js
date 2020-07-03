@@ -14,16 +14,11 @@ class InfoArea extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      p1: {
-        num: "1",
-        name: "",
-        leaderBoardPos: "",
-      },
-      p2: {
-        num: "2",
-        name: "",
-        leaderBoardPos: "",
-      },
+      player: {
+        name: '',
+        leaderboardRanking: '',
+        imgSrc: ''
+      }
     };
   }
   componentDidMount() {
@@ -32,7 +27,7 @@ class InfoArea extends React.Component {
     axios.get(`/api/users/`,{headers: {'Authorization': `Bearer ${currentJWT}`}})
     .then(({data}) => {
       console.log(data)
-      this.setState({player: {...this.state.player, name: data.name, leaderboardRanking: data.leaderboardRanking}})
+      this.setState({player: {...this.state.player, name: data.username, leaderboardRanking: data.leaderboardRanking, imgSrc: data.userAvatarImageLink}})
     })
     .catch(err => console.error(err))
   }
@@ -42,6 +37,7 @@ class InfoArea extends React.Component {
       <>
         <h1>Info Area</h1>
         <PlayerCard
+          imgSrc = {this.state.player.imgSrc}
           playerName={this.state.player.name}
           leaderBoardPos={this.state.player.leaderboardRanking}
         />
