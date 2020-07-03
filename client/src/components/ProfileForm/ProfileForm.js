@@ -7,14 +7,13 @@ import { makeStyles } from '@material-ui/core/styles'
 
 //import MUI core components
 import Grid from '@material-ui/core/Grid'
-import Paper from '@material-ui/core/Paper';
-import Avatar from '@material-ui/core/Avatar';
-import TextField from '@material-ui/core/TextField';
+import Paper from '@material-ui/core/Paper'
+import Avatar from '@material-ui/core/Avatar'
+import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
 
 
 //create styles
-
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -60,7 +59,7 @@ const ProfileForm = (props) => {
         </Paper>
       </Grid>
     </div>
-  );
+  )
 }
 
 export default ProfileForm
