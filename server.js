@@ -18,6 +18,10 @@ app.use(passport.initialize())
 app.use(passport.session())
 app.use(require("./routes"))
 
+app.get('/*',(req,res) => {
+  res.sendFile(path.join(__dirname,'client','build','index.html'))
+})
+
 const server = http.createServer(app)
 passport.use(new Strategy(User.authenticate()))
 passport.serializeUser(User.serializeUser())
