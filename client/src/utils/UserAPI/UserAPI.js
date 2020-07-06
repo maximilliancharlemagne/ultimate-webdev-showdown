@@ -2,7 +2,7 @@ import axios from 'axios'
 
 const UserAPI = {
 
-  login:(username, password)=>{
+  login:(username, password,cb)=>{
     axios.post('api/users/login',{
       username: username,
       password: password
@@ -14,6 +14,7 @@ const UserAPI = {
           window.location = "game";
         } else{
           console.log('incorrect Username or Password')
+          cb()
         }
       })},
     signUp:(username,password)=>{

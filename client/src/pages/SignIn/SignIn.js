@@ -20,6 +20,10 @@ class SignIn extends React.Component {
         username: '',
         password: ''
       },
+      error: '',
+      setError: () => {
+        this.setState({error: 'Incorrect username or password.'})
+      },
       handleInputChange: (event) => {
         let newValue = event.target.value
         this.setState({
@@ -35,7 +39,7 @@ class SignIn extends React.Component {
         let password = this.state.user.password
         console.log(this.state.user.username)
         console.log(this.state.user.password)
-        UserAPI.login(username, password)
+        UserAPI.login(username, password,this.state.setError)
       },
       handleUpdateUser: () => { },
       handleDeleteUser: () => { }
@@ -57,6 +61,7 @@ class SignIn extends React.Component {
             <SignInForm user = {this.state.user}
               handleInputChange = {this.state.handleInputChange}
               handleAddUser = {this.state.handleAddUser} />
+              <p>{this.state.error}</p>
         </Grid>
       </Grid>
       </>
