@@ -63,7 +63,7 @@ const SignInForm = (props) => {
               </Button>
             </Grid>
             <Grid item>
-              <h4>Dont' have an account?<br />Sign up here!</h4>
+              <h4>Don't have an account?<br />Sign up here!</h4>
             </Grid>
             <Grid item>
               <Link to="/SignUp" className="nav-link">
