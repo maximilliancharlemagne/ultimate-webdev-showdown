@@ -1,11 +1,27 @@
-.square {
-  display: inline-block;
-  text-align: center;
-  line-height: 80px;
-  border-style: solid;
-  min-height: 80px;
-  min-width: 80px;
-  font-size: xx-large;
-  margin: 10px;
-  vertical-align: middle;
+@media(min-width:321px) {
+  .square {
+    display: inline-block;
+    text-align: center;
+    line-height: 80px;
+    border-style: solid;
+    min-height: 80px;
+    min-width: 80px;
+    font-size: xx-large;
+    margin: 10px;
+    vertical-align: middle;
+  }
+}
+
+@media(max-width: 320px) {
+  .square {
+    display: inline-block;
+    text-align: center;
+    line-height: 60px;
+    border-style: solid;
+    min-height: 60px;
+    min-width: 60px;
+    font-size: xx-large;
+    margin: 10px;
+    vertical-align: middle;
+  }
 }
