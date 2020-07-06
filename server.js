@@ -18,8 +18,6 @@ app.use(passport.initialize())
 app.use(passport.session())
 app.use(require("./routes"))
 
-app.get('/','/index.html')
-
 const server = http.createServer(app)
 passport.use(new Strategy(User.authenticate()))
 passport.serializeUser(User.serializeUser())
@@ -48,7 +46,6 @@ function xoChooser() {
   x = !x
   return piece
 }
-
 
 // Emit welcome message on connection
 io.on('connection', function(socket) {
