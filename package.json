@@ -28,7 +28,6 @@
   "bugs": {
     "url": "https://github.com/maximilliancharlemagne/ultimate-webdev-showdown/issues"
   },
-  "homepage": "https://github.com/maximilliancharlemagne/ultimate-webdev-showdown#readme",
   "dependencies": {
     "axios": "^0.19.2",
     "concurrently": "^5.2.0",

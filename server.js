@@ -2,7 +2,6 @@ require('dotenv').config()
 
 const express = require('express')
 const app = express()
-const path = require('path')
 const http = require('http')
 
 const { User } = require('./models')
@@ -10,7 +9,7 @@ const passport = require('passport')
 const { Strategy } = require('passport-local')
 const { Strategy: JWTStrategy, ExtractJwt } = require('passport-jwt')
 
-express.static(path.join(__dirname,'client','build'))
+// express.static(path.join(__dirname,'client','build'))
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
@@ -18,9 +17,13 @@ app.use(passport.initialize())
 app.use(passport.session())
 app.use(require("./routes"))
 
-app.get('/*',(req,res) => {
-  res.sendFile(path.join(__dirname,'client','build','index.html'))
-})
+const root = require("path").join(__dirname, "client", "build");
+
+app.use(express.static(root));
+
+app.get("*", (req, res) => {
+  res.sendFile("index.html", { root });
+});
 
 const server = http.createServer(app)
 passport.use(new Strategy(User.authenticate()))
