@@ -5,10 +5,10 @@ CONTENT:
 A digital version of the classic game of Tic-Tac-Toe.
 
 Two parties can create accounts, sign in, and play eachother through a browser environment.
-The gameboard grid is three squares by three squares
+The gameboard grid is three squares by three squares.
 Players can take turns placing their designated X or O in unmarked squares.
 The first player to achieve three marks in a row (verticallly, horizontally, or diagonally) is the winner.
-The game is over when all squares are full 
+The game is over when all squares are full.
 
 FEATURES:
 
