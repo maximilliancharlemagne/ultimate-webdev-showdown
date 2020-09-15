@@ -50,5 +50,7 @@ Material-UI
 
 <a href="https://github.com/benroznos" target="_blank">Ben Roznos</a>
 
+### View <a href="https://github.com/maximilliancharlemagne/ultimate-webdev-showdown/graphs/contributors" target="_blank">Contributions</a>
+
 
 ### Visit <a href="https://secure-journey-85630.herokuapp.com/" target="_blank">Ultimate Webdev Showdown</a>
