@@ -1,6 +1,6 @@
 # ultimate-webdev-showdown
 
-CONTENT:
+### About:
 
 A digital version of the classic game of Tic-Tac-Toe.
 
@@ -10,7 +10,7 @@ Players can take turns placing their designated X or O in unmarked squares.
 The first player to achieve three marks in a row (verticallly, horizontally, or diagonally) is the winner.
 The game is over when all squares are full.
 
-FEATURES:
+### Features:
 
 React frontend
 
@@ -20,8 +20,7 @@ Material-UI components and aesthetics,
 
 Password protected accounts with user authentication
 
-
-TECHNOLOGY USED:
+### Built With:
 
 ReactJS,
 
@@ -38,7 +37,7 @@ MongoDB Database with a Mongoose ODM,
 Material-UI
 
 
-CONTRIBUTORS:
+### Authors:
 
 <a href="https://github.com/IsaacVon" target="_blank">Isaac Householder</a>
 
@@ -52,4 +51,4 @@ CONTRIBUTORS:
 <a href="https://github.com/benroznos" target="_blank">Ben Roznos</a>
 
 
-Visit the Deployed App: <a href="https://secure-journey-85630.herokuapp.com/" target="_blank">Ultimate Webdev Showdown</a>
+### Visit <a href="https://secure-journey-85630.herokuapp.com/" target="_blank">Ultimate Webdev Showdown</a>
