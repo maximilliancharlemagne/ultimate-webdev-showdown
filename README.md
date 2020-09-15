@@ -12,13 +12,13 @@ The game is over when all squares are full.
 
 ### Features:
 
-React frontend
+- React frontend
 
-Mobile-first design,
+- Mobile-first design
 
-Material-UI components and aesthetics,
+- Material-UI components and aesthetics
 
-Password protected accounts with user authentication
+- Password protected accounts with user authentication
 
 ### Built With:
 
@@ -39,16 +39,13 @@ Material-UI
 
 ### Authors:
 
-<a href="https://github.com/IsaacVon" target="_blank">Isaac Householder</a>
+- <a href="https://github.com/IsaacVon" target="_blank">Isaac Householder</a>
 
+- <a href="https://github.com/Foxk2p" target="_blank">Kele Palafox</a>
 
-<a href="https://github.com/Foxk2p" target="_blank">Kele Palafox</a>
- 
- 
- <a href="https://github.com/maximilliancharlemagne" target="_blank">Maxwell Roberts</a>
+- <a href="https://github.com/maximilliancharlemagne" target="_blank">Maxwell Roberts</a>
 
-
-<a href="https://github.com/benroznos" target="_blank">Ben Roznos</a>
+- <a href="https://github.com/benroznos" target="_blank">Ben Roznos</a>
 
 ### View <a href="https://github.com/maximilliancharlemagne/ultimate-webdev-showdown/graphs/contributors" target="_blank">Contributions</a>
 
