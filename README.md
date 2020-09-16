@@ -23,22 +23,21 @@ The first player to achieve three marks in a row (vertically, horizontally, or d
 
 ### Built With:
 
-ReactJS,
+- React.js - MVC front-end framework
 
-Passport,
+- Passport.js - Authentication middleware
 
-Socket.io,
+- Socket.io - event-based communication library
 
-Node,
+- Node.js - JavaScript runtime
 
-Express Web Server,
+- Express.js - Node.js framework
 
-MongoDB Database with a Mongoose ODM,
+- MongoDB - NoSQL document database
 
-Material-UI
+- Mongoose - Object Data Modeling (ODM) library
 
-
-### Authors:
+- Material-UI - React components library
 
 ### Authors:
 
