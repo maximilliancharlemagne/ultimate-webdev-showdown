@@ -17,7 +17,7 @@ The first player to achieve three marks in a row (vertically, horizontally, or d
 
 - Mobile-first design
 
-- Material-UI components and aesthetics
+- Material Design components and aesthetics
 
 - Password protected accounts with user authentication
 
