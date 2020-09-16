@@ -40,13 +40,19 @@ Material-UI
 
 ### Authors:
 
-- <a href="https://github.com/IsaacVon" target="_blank">Isaac Householder</a>
+### Authors:
 
-- <a href="https://github.com/Foxk2p" target="_blank">Kele Palafox</a>
+- <a href="https://github.com/IsaacVon" target="_blank">Isaac H.</a>
 
-- <a href="https://github.com/maximilliancharlemagne" target="_blank">Maxwell Roberts</a>
 
-- <a href="https://github.com/benroznos" target="_blank">Ben Roznos</a>
+- <a href="https://github.com/Foxk2p" target="_blank">Kele P.</a>
+ 
+ 
+- <a href="https://github.com/maximilliancharlemagne" target="_blank">Maxwell R.</a>
+
+
+- <a href="https://github.com/benroznos" target="_blank">Ben R.</a>
+
 
 ### View <a href="https://github.com/maximilliancharlemagne/ultimate-webdev-showdown/graphs/contributors" target="_blank">Contributions</a>
 
